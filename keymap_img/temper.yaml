@@ -1,16 +1,7 @@
 layout: {zmk_keyboard: temper}
 layers:
   default:
-  - - Q
-    - W
-    - F
-    - P
-    - B
-    - J
-    - L
-    - U
-    - Y
-    - {t: '''', s: '"'}
+  - [Q, W, F, P, B, J, L, U, Y, '''']
   - - {t: A, h: ⌘}
     - {t: R, h: ⎇}
     - {t: S, h: ⌃}
@@ -30,13 +21,13 @@ layers:
     - H
     - {t: ',', s: ;}
     - {t: ., s: ':'}
-    - {t: '?', s: '!'}
-  - - cmd
-    - num
-    - {t: ⇧, s: ⇪}
-    - SPACE
-    - nav
-    - {t: default, h: toggle}
+    - {t: /, s: '?'}
+  - - ESC
+    - {t: SPACE, h: nav}
+    - {t: ↹, h: num}
+    - {t: RET, h: num}
+    - {t: BSPC, h: num}
+    - DEL
   game:
   - - ↹
     - Q
@@ -97,8 +88,8 @@ layers:
     - '3'
     - {t: '=', s: +}
   - - {t: ▽, type: trans}
-    - {type: held}
     - {t: ▽, type: trans}
+    - {type: held}
     - '0'
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
@@ -134,10 +125,10 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
   - - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
     - {type: held}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
     - {t: ▽, type: trans}
   fun:
   - - {t: game, h: toggle}
@@ -172,9 +163,9 @@ layers:
     - F10
   - - {t: ▽, type: trans}
     - {type: held}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
     - {type: held}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
     - {t: ▽, type: trans}
   cmd:
   - - ⌘Q
@@ -207,7 +198,7 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-  - - {type: held}
+  - - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
