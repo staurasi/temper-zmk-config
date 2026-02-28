@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: temper}
 layers:
   default:
-  - [Q, W, F, P, B, J, L, U, Y, '''']
+  - [Q, W, F, P, B, J, L, U, Y, '&qt']
   - - {t: A, h: ⌘}
     - {t: R, h: ⎇}
     - {t: S, h: ⌃}
@@ -20,12 +20,12 @@ layers:
     - K
     - H
     - {t: ',', s: ;}
-    - {t: ., s: ':'}
+    - '&dot_colon'
     - {t: /, s: '?'}
   - - ESC
     - {t: SPACE, h: nav}
-    - {t: ↹, h: num}
-    - {t: RET, h: num}
+    - {t: ↹, h: sym1}
+    - {t: RET, h: sym2}
     - {t: BSPC, h: num}
     - DEL
   game:
@@ -76,12 +76,58 @@ layers:
     - '8'
     - '9'
     - {t: '-', s: _}
-  - [^, '#', (, ), $, _, '4', '5', '6', +]
-  - - {t: '&', s: '|'}
-    - <
-    - {t: '[', s: '{'}
-    - {t: ']', s: '}'}
-    - '>'
+  - - {t: '1', h: ⌘}
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+    - +
+  - - {t: /, s: '?'}
+    - '*'
+    - {t: '-', s: _}
+    - +
+    - {t: ., s: '>'}
+    - {t: /, s: \}
+    - '1'
+    - '2'
+    - '3'
+    - {t: '=', s: +}
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - '0'
+    - {type: held}
+    - {t: ▽, type: trans}
+  sym1:
+  - - '~'
+    - '@'
+    - '{'
+    - '}'
+    - '%'
+    - '*'
+    - '7'
+    - '8'
+    - '9'
+    - {t: '-', s: _}
+  - - {t: '1', h: ⌘}
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+    - +
+  - - {t: /, s: '?'}
+    - '*'
+    - {t: '-', s: _}
+    - +
+    - {t: ., s: '>'}
     - {t: /, s: \}
     - '1'
     - '2'
@@ -91,6 +137,43 @@ layers:
     - {t: ▽, type: trans}
     - {type: held}
     - '0'
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  sym2:
+  - - '~'
+    - '@'
+    - '{'
+    - '}'
+    - '%'
+    - '*'
+    - '7'
+    - '8'
+    - '9'
+    - {t: '-', s: _}
+  - - {t: '1', h: ⌘}
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+    - +
+  - - {t: /, s: '?'}
+    - '*'
+    - {t: '-', s: _}
+    - +
+    - {t: ., s: '>'}
+    - {t: /, s: \}
+    - '1'
+    - '2'
+    - '3'
+    - {t: '=', s: +}
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: '0', type: held}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
   nav:
@@ -163,9 +246,9 @@ layers:
     - F10
   - - {t: ▽, type: trans}
     - {type: held}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
     - {type: held}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
     - {t: ▽, type: trans}
   cmd:
   - - ⌘Q
@@ -204,3 +287,16 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
+combos:
+- p: [26, 27]
+  k: {t: ;, s: ':'}
+- p: [10, 26]
+  k: '&engr A'
+- p: [17, 23]
+  k: '&engr E'
+- p: [18, 23]
+  k: '&engr I'
+- p: [19, 23]
+  k: '&engr O'
+- p: [7, 23]
+  k: '&engr U'
