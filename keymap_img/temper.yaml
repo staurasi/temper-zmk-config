@@ -20,7 +20,7 @@ layers:
     - K
     - H
     - {t: ',', s: ;}
-    - '&dot_colon'
+    - {t: ., s: '!'}
     - {t: /, s: '?'}
   - - ESC
     - {t: SPACE, h: nav}
