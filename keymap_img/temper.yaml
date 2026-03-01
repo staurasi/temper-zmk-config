@@ -23,48 +23,11 @@ layers:
     - {t: ., s: '!'}
     - {t: /, s: '?'}
   - - ESC
-    - {t: SPACE, h: fun}
-    - {t: ↹, h: sym2}
-    - {t: RET, h: nav}
-    - {t: BSPC, h: sym1}
+    - {t: SPACE, h: nav}
+    - {t: ↹, h: sym1}
+    - {t: RET, h: sym2}
+    - {t: BSPC, h: num}
     - DEL
-  game:
-  - - ↹
-    - Q
-    - W
-    - E
-    - R
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-  - - ⇧
-    - A
-    - S
-    - D
-    - F
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-  - - ⌃
-    - Z
-    - X
-    - C
-    - V
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-  - - ESC
-    - {t: ▽, type: trans}
-    - SPACE
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
   num:
   - - '~'
     - '@'
@@ -96,23 +59,14 @@ layers:
     - '2'
     - '3'
     - {t: '=', s: +}
-  - - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+  - - ''
+    - ''
+    - ''
     - '0'
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - {type: held}
+    - ''
   sym1:
-  - - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - '?'
-    - '!'
-    - +
-    - '&und DQT'
-    - '&und SQT'
+  - ['', '', '', '', '', '?', '!', +, '&und DQT', '&und SQT']
   - - {t: '1', h: ⌘}
     - '&hml LALT'
     - '&hml LCTRL'
@@ -123,133 +77,79 @@ layers:
     - {t: '-', s: _}
     - {t: '=', s: +}
     - '&und GRAVE'
-  - - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+  - - ''
+    - ''
+    - ''
+    - ''
+    - ''
     - \
     - '&'
     - '|'
     - '&und TILDE'
     - {t: /, s: '?'}
-  - - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+  - - ''
+    - ''
     - {type: held}
-    - {t: ▽, type: trans}
+    - ''
+    - ''
+    - ''
   sym2:
   - - '&und CARET'
     - {t: '[', s: '{'}
     - {t: ']', s: '}'}
     - $
     - {t: ;, s: ':'}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-  - - '{'
-    - (
-    - )
-    - '}'
-    - '%'
-    - {t: ▽, type: trans}
-    - ⇧
-    - ⌃
-    - ⎇
-    - ⌘
-  - - '#'
-    - <
-    - '>'
-    - '*'
-    - '@'
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-  - - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+  - ['{', (, ), '}', '%', '', ⇧, ⌃, ⎇, ⌘]
+  - ['#', <, '>', '*', '@', '', '', '', '', '']
+  - - ''
+    - ''
+    - ''
     - {type: held}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - ''
+    - ''
   nav:
-  - - Gui+1
-    - Gui+2
-    - Gui+3
-    - Gui+4
-    - Gui+5
-    - '&msc SCRL_LEFT'
-    - '&msc SCRL_DOWN'
-    - '&msc SCRL_UP'
-    - '&msc SCRL_RIGHT'
-    - {t: ▽, type: trans}
+  - [Gui+1, Gui+2, Gui+3, Gui+4, Gui+5, '&msc SCRL_LEFT', '&msc SCRL_DOWN', '&msc SCRL_UP', '&msc SCRL_RIGHT', '']
   - - {t: ⇧, h: sticky}
     - {t: ⌃, h: sticky}
     - {t: ⎇, h: sticky}
     - {t: ⌘, h: sticky}
-    - {t: ▽, type: trans}
+    - ''
     - ←
     - ↓
     - ↑
     - →
     - ⇪
-  - - UNDO
-    - CUT
-    - COPY
-    - PASTE
-    - {t: ▽, type: trans}
-    - HOME
-    - PG UP
-    - PG DN
-    - END
-    - INS
-  - - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+  - [Ctl+Z, Ctl+X, Ctl+C, Ctl+V, '', HOME, PG UP, PG DN, END, INS]
+  - - ''
     - {type: held}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - ''
+    - ''
+    - ''
+    - ''
   fun:
-  - - {t: ▽, type: trans}
-    - MUTE
-    - VOL DN
-    - VOL UP
-    - OUT USB
-    - {t: ▽, type: trans}
-    - F7
-    - F8
-    - F9
-    - F12
+  - ['', MUTE, VOL DN, VOL UP, OUT USB, '', F7, F8, F9, F12]
   - - {t: BT, h: '0'}
     - {t: BT, h: '1'}
     - {t: BT, h: '2'}
     - {t: BT, h: '3'}
     - {t: BT, h: '4'}
-    - {t: ▽, type: trans}
+    - ''
     - F4
     - F5
     - F6
     - F11
-  - - BT CLR
-    - PREV
-    - PP
-    - NEXT
-    - OUT BLE
-    - {t: ▽, type: trans}
-    - F1
-    - F2
-    - F3
-    - F10
-  - - {t: ▽, type: trans}
+  - [BT CLR, PREV, PP, NEXT, OUT BLE, '', F1, F2, F3, F10]
+  - - ''
     - {type: held}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - ''
+    - ''
+    - {type: held}
+    - ''
 combos:
 - p: [26, 27]
   k: {t: ;, s: ':'}
