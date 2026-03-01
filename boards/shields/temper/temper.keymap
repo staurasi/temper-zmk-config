@@ -105,17 +105,17 @@
             bindings = <&kp COMMA>, <&kp SEMI>;
             mods = <(MOD_LSFT)>;
         };
-        dot_colon: dot_colon {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&kp COLON>, <&kp DOT>;
-        };
+        /* dot_colon: dot_colon { */
+        /*     compatible = "zmk,behavior-hold-tap"; */
+        /*     #binding-cells = <0>; */
+        /*     flavor = "hold-preferred"; */
+        /*     tapping-term-ms = <200>; */
+        /*     bindings = <&kp COLON>, <&kp DOT>; */
+        /* }; */
         dot_excl: dot_excl {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&dot_colon>, <&kp EXCL>;
+            bindings = <&kp DOT>, <&kp EXCL>;
             mods = <(MOD_LSFT)>;
         };
         qmrk_excl: qmrk_excl {
@@ -174,13 +174,13 @@
 //    ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
 //    │ &hml lgui A │ &hml lalt R │ &hml lctl S │ &hml lsft T │      G      │   │      M      │ &hmr rsft N │ &hmr lctl E │ &hmr lalt I │ &hmr lgui O │
 //    ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-//    │      Z      │      X      │      C      │      D      │      V      │   │      K      │      H      │ &comma_semi │ &dot_colon  │      /      │
+//    │      Z      │      X      │      C      │      D      │      V      │   │      K      │      H      │ &comma_semi │  &dot_excl  │      /      │
 //    └─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┘
 //                                │     esc     │ lt NAV spc  │ lt SYM1 tab │   │ lt SYM2 ent │ lt NUM bspc │     del     │
 //                                └─────────────┴─────────────┴─────────────┘   └─────────────┴─────────────┴─────────────┘
   &kp Q         &kp W         &kp F          &kp P           &kp B              &kp J          &kp L          &kp U          &kp Y         &qt
   &hml LGUI A   &hml LALT R   &hml LCTRL S   &hml LSHFT T    &kp G              &kp M          &hmr RSHFT N   &hmr LCTRL E   &hmr LALT I   &hmr LGUI O
-  &kp Z         &kp X         &kp C          &kp D           &kp V              &kp K          &kp H          &comma_semi    &dot_colon    &kp SLASH
+  &kp Z         &kp X         &kp C          &kp D           &kp V              &kp K          &kp H          &comma_semi    &dot_excl     &kp SLASH
                               &kp ESC        &lt NAV SPACE   &lt SYM1 TAB       &lt SYM2 RET   &lt NUM BSPC   &kp DEL
                         >;
                 };
