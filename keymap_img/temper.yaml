@@ -24,8 +24,8 @@ layers:
     - {t: /, s: '?'}
   - - ESC
     - {t: SPACE, h: nav}
-    - {t: ↹, h: sym1}
-    - {t: RET, h: sym2}
+    - {t: ↹, h: rsym}
+    - {t: RET, h: lsym}
     - {t: BSPC, h: num}
     - DEL
   num:
@@ -65,13 +65,13 @@ layers:
     - '0'
     - {type: held}
     - ''
-  sym1:
+  rsym:
   - ['', '', '', '', '', '?', '!', +, '&und DQT', '&und SQT']
-  - - {t: '1', h: ⌘}
-    - '&hml LALT'
-    - '&hml LCTRL'
-    - '&hml LSHFT'
-    - '5'
+  - - ⌘
+    - ⎇
+    - ⌃
+    - ⇧
+    - ''
     - ':'
     - _
     - {t: '-', s: _}
@@ -93,7 +93,7 @@ layers:
     - ''
     - ''
     - ''
-  sym2:
+  lsym:
   - - '&und CARET'
     - {t: '[', s: '{'}
     - {t: ']', s: '}'}
