@@ -11,14 +11,13 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #define DEFAULT 0
-#define NUM 3
-#define SYM1 4
-#define SYM2 5
-#define NAV 6
-#define FUN 7
+#define NUM 1
+#define SYM1 2
+#define SYM2 3
+#define NAV 4
+#define FUN 5
 
-# define ______ &trans
-
+# define ______ &none
 / {
     conditional_layers {
         compatible = "zmk,conditional-layers";
@@ -196,23 +195,6 @@
                               &kp ESC        &lt NAV SPACE   &lt SYM1 TAB       &lt SYM2 RET   &lt NUM BSPC   &kp DEL
                         >;
                 };
-                game_layer {
-                        bindings = <
-//    ┌──────┬───┬─────┬────────┬─────┐   ┌────────┬────────┬────────┬────────┬────────┐
-//    │ tab  │ Q │  W  │   E    │  R  │   │ ______ │ ______ │ ______ │ ______ │ ______ │
-//    ├──────┼───┼─────┼────────┼─────┤   ├────────┼────────┼────────┼────────┼────────┤
-//    │ lsft │ A │  S  │   D    │  F  │   │ ______ │ ______ │ ______ │ ______ │ ______ │
-//    ├──────┼───┼─────┼────────┼─────┤   ├────────┼────────┼────────┼────────┼────────┤
-//    │ lctl │ Z │  X  │   C    │  V  │   │ ______ │ ______ │ ______ │ ______ │ ______ │
-//    └──────┴───┼─────┼────────┼─────┤   ├────────┼────────┼────────┼────────┴────────┘
-//               │ esc │ ______ │ spc │   │ ______ │ ______ │ ______ │
-//               └─────┴────────┴─────┘   └────────┴────────┴────────┘
-  &kp TAB     &kp Q   &kp W     &kp E    &kp R           ______   ______   ______   ______   ______
-  &kp LSHFT   &kp A   &kp S     &kp D    &kp F           ______   ______   ______   ______   ______
-  &kp LCTRL   &kp Z   &kp X     &kp C    &kp V           ______   ______   ______   ______   ______
-                      &kp ESC   ______   &kp SPACE       ______   ______   ______
-                        >;
-                };
                 num_layer {
                         bindings = <
 //    ┌─────────────┬───┬────────┬────────┬────────┐   ┌───────────┬────────┬────────┬───┬───┐
@@ -274,14 +256,14 @@
 //    ├──────────┼──────────┼──────────┼──────────┼─────────┤   ├────────────────┼────────────────┼──────────────┼────────────────┼────────┤
 //    │ &sk lsft │ &sk lctl │ &sk lalt │ &sk lgui │ ______  │   │      left      │      down      │      up      │      rght      │ capsw  │
 //    ├──────────┼──────────┼──────────┼──────────┼─────────┤   ├────────────────┼────────────────┼──────────────┼────────────────┼────────┤
-//    │   undo   │   cut    │   copy   │ K_PASTE  │ ______  │   │      home      │      pgup      │     pgdn     │      end       │  ins   │
+//    │ lctl(Z)  │ lctl(X)  │ lctl(C)  │ lctl(V)  │ ______  │   │      home      │      pgup      │     pgdn     │      end       │  ins   │
 //    └──────────┴──────────┼──────────┼──────────┼─────────┤   ├────────────────┼────────────────┼──────────────┼────────────────┴────────┘
 //                          │  ______  │  ______  │ ______  │   │     ______     │     ______     │    ______    │
 //                          └──────────┴──────────┴─────────┘   └────────────────┴────────────────┴──────────────┘
-  &kp RG(N1)   &kp RG(N2)   &kp RG(N3)   &kp RG(N4)    &kp RG(N5)       &msc SCRL_LEFT   &msc SCRL_DOWN   &msc SCRL_UP   &msc SCRL_RIGHT   ______
-  &sk LSHFT    &sk LCTRL    &sk LALT     &sk LGUI      ______           &kp LEFT         &kp DOWN         &kp UP         &kp RIGHT         &caps_word
-  &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE   ______           &kp HOME         &kp PG_UP        &kp PG_DN      &kp END           &kp INS
-                            ______       ______        ______           ______           ______           ______
+  &kp RG(N1)   &kp RG(N2)   &kp RG(N3)   &kp RG(N4)   &kp RG(N5)       &msc SCRL_LEFT   &msc SCRL_DOWN   &msc SCRL_UP   &msc SCRL_RIGHT   ______
+  &sk LSHFT    &sk LCTRL    &sk LALT     &sk LGUI     ______           &kp LEFT         &kp DOWN         &kp UP         &kp RIGHT         &caps_word
+  &kp LC(Z)    &kp LC(X)    &kp LC(C)    &kp LC(V)    ______           &kp HOME         &kp PG_UP        &kp PG_DN      &kp END           &kp INS
+                            ______       ______       ______           ______           ______           ______
                         >;
                 };
 
