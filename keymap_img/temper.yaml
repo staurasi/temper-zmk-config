@@ -23,10 +23,10 @@ layers:
     - {t: ., s: '!'}
     - {t: /, s: '?'}
   - - ESC
-    - {t: SPACE, h: nav}
-    - {t: ↹, h: sym1}
-    - {t: RET, h: sym2}
-    - {t: BSPC, h: num}
+    - {t: SPACE, h: fun}
+    - {t: ↹, h: sym2}
+    - {t: RET, h: nav}
+    - {t: BSPC, h: sym1}
     - DEL
   game:
   - - ↹
@@ -100,93 +100,93 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - '0'
-    - {type: held}
+    - {t: ▽, type: trans}
     - {t: ▽, type: trans}
   sym1:
-  - - '~'
-    - '@'
-    - '{'
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - '?'
+    - '!'
+    - +
+    - '&und DQT'
+    - '&und SQT'
+  - - {t: '1', h: ⌘}
+    - '&hml LALT'
+    - '&hml LCTRL'
+    - '&hml LSHFT'
+    - '5'
+    - ':'
+    - _
+    - {t: '-', s: _}
+    - {t: '=', s: +}
+    - '&und GRAVE'
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - \
+    - '&'
+    - '|'
+    - '&und TILDE'
+    - {t: /, s: '?'}
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {type: held}
+    - {t: ▽, type: trans}
+  sym2:
+  - - '&und CARET'
+    - {t: '[', s: '{'}
+    - {t: ']', s: '}'}
+    - $
+    - {t: ;, s: ':'}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - '{'
+    - (
+    - )
     - '}'
     - '%'
+    - {t: ▽, type: trans}
+    - ⇧
+    - ⌃
+    - ⎇
+    - ⌘
+  - - '#'
+    - <
+    - '>'
     - '*'
-    - '7'
-    - '8'
-    - '9'
-    - {t: '-', s: _}
-  - - {t: '1', h: ⌘}
-    - '2'
-    - '3'
-    - '4'
-    - '5'
-    - '6'
-    - '7'
-    - '8'
-    - '9'
-    - +
-  - - {t: /, s: '?'}
-    - '*'
-    - {t: '-', s: _}
-    - +
-    - {t: ., s: '>'}
-    - {t: /, s: \}
-    - '1'
-    - '2'
-    - '3'
-    - {t: '=', s: +}
+    - '@'
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
   - - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {type: held}
-    - '0'
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-  sym2:
-  - - '~'
-    - '@'
-    - '{'
-    - '}'
-    - '%'
-    - '*'
-    - '7'
-    - '8'
-    - '9'
-    - {t: '-', s: _}
-  - - {t: '1', h: ⌘}
-    - '2'
-    - '3'
-    - '4'
-    - '5'
-    - '6'
-    - '7'
-    - '8'
-    - '9'
-    - +
-  - - {t: /, s: '?'}
-    - '*'
-    - {t: '-', s: _}
-    - +
-    - {t: ., s: '>'}
-    - {t: /, s: \}
-    - '1'
-    - '2'
-    - '3'
-    - {t: '=', s: +}
-  - - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: '0', type: held}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
   nav:
-  - - {t: ▽, type: trans}
+  - - Gui+1
+    - Gui+2
+    - Gui+3
+    - Gui+4
+    - Gui+5
+    - '&msc SCRL_LEFT'
+    - '&msc SCRL_DOWN'
+    - '&msc SCRL_UP'
+    - '&msc SCRL_RIGHT'
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - DEL
-    - HOME
-    - END
-    - ↹
-    - BSPC
   - - {t: ⇧, h: sticky}
     - {t: ⌃, h: sticky}
     - {t: ⎇, h: sticky}
@@ -196,25 +196,25 @@ layers:
     - ↓
     - ↑
     - →
-    - {t: ESC, s: '`'}
+    - ⇪
+  - - UNDO
+    - CUT
+    - COPY
+    - PASTE
+    - {t: ▽, type: trans}
+    - HOME
+    - PG UP
+    - PG DN
+    - END
+    - INS
   - - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - RET
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-  - - {t: ▽, type: trans}
     - {type: held}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
   fun:
-  - - {t: game, h: toggle}
+  - - {t: ▽, type: trans}
     - MUTE
     - VOL DN
     - VOL UP
@@ -248,43 +248,6 @@ layers:
     - {type: held}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - {type: held}
-    - {t: ▽, type: trans}
-  cmd:
-  - - ⌘Q
-    - ⌘W
-    - F
-    - Gui+P
-    - B
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-  - - ⇧
-    - ⌃
-    - ⎇
-    - ⌘
-    - Gui+G
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-  - - ⌘Z
-    - ⌘X
-    - ⌘C
-    - D
-    - ⌘V
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-  - - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
 combos:
@@ -294,6 +257,8 @@ combos:
   k: '&engr A'
 - p: [17, 23]
   k: '&engr E'
+- p: [17, 26]
+  k: '&eacute'
 - p: [18, 23]
   k: '&engr I'
 - p: [19, 23]
