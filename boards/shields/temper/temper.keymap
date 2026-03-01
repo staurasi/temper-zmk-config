@@ -105,18 +105,18 @@
             bindings = <&kp COMMA>, <&kp SEMI>;
             mods = <(MOD_LSFT)>;
         };
-        dot_excl: dot_excl {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp DOT>, <&kp EXCL>;
-            mods = <(MOD_LSFT)>;
-        };
         dot_colon: dot_colon {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <0>;
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
-            bindings = <&kp COLON &dot_excl>;
+            bindings = <&kp COLON>, <&kp DOT>;
+        };
+        dot_excl: dot_excl {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&dot_colon>, <&kp EXCL>;
+            mods = <(MOD_LSFT)>;
         };
         qmrk_excl: qmrk_excl {
             compatible = "zmk,behavior-mod-morph";
