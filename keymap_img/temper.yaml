@@ -22,7 +22,7 @@ layers:
     - {t: ',', s: ;}
     - {t: ., s: '!'}
     - {t: /, s: '?'}
-  - - ESC
+  - - {t: ESC, h: media}
     - {t: SPACE, h: nav}
     - {t: ↹, h: rsym}
     - {t: RET, h: lsym}
@@ -105,16 +105,7 @@ layers:
     - ''
   nav:
   - [Gui+1, Gui+2, Gui+3, Gui+4, Gui+5, '&msc SCRL_LEFT', '&msc SCRL_DOWN', '&msc SCRL_UP', '&msc SCRL_RIGHT', '']
-  - - {t: ⇧, h: sticky}
-    - {t: ⌃, h: sticky}
-    - {t: ⎇, h: sticky}
-    - {t: ⌘, h: sticky}
-    - ''
-    - ←
-    - ↓
-    - ↑
-    - →
-    - ⇪
+  - [⌘, ⎇, ⌃, ⇧, '', ←, ↓, ↑, →, ⇪]
   - [Ctl+Z, Ctl+X, Ctl+C, Ctl+V, '', HOME, PG UP, PG DN, END, INS]
   - - ''
     - {type: held}
@@ -123,24 +114,36 @@ layers:
     - ''
     - ''
   fun:
-  - ['', MUTE, VOL DN, VOL UP, OUT USB, '', F7, F8, F9, F12]
-  - - {t: BT, h: '0'}
-    - {t: BT, h: '1'}
-    - {t: BT, h: '2'}
-    - {t: BT, h: '3'}
-    - {t: BT, h: '4'}
-    - ''
-    - F4
-    - F5
-    - F6
-    - F11
-  - [BT CLR, PREV, PP, NEXT, OUT BLE, '', F1, F2, F3, F10]
+  - [F1, F2, F3, F4, '', '', '', '', '', '']
+  - [F5, F6, F7, F8, '', '', ⇧, ⌃, ⎇, ⌘]
+  - [F9, F10, F11, F12, '', '', '', '', '', '']
   - - ''
     - ''
     - ''
     - ''
     - ''
     - {type: held}
+  media:
+  - ['', '', '', '', '', '', '', '', '', '']
+  - [⇧, ⌃, ⎇, ⌘, '', PREV, VOL DN, VOL UP, NEXT, '']
+  - - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - {t: BT, h: '0'}
+    - {t: BT, h: '1'}
+    - {t: BT, h: '2'}
+    - {t: BT, h: '3'}
+    - {t: BT, h: '4'}
+  - - {type: held}
+    - ''
+    - ''
+    - STOP
+    - PP
+    - 'VOL
+
+      MUTE'
 combos:
 - p: [26, 27]
   k: {t: ;, s: ':'}
