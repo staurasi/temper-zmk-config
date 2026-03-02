@@ -1,6 +1,6 @@
 layout: {zmk_keyboard: temper}
 layers:
-  default:
+  Colemak-DH:
   - [Q, W, F, P, B, J, L, U, Y, '&qt']
   - - {t: A, h: ⌘}
     - {t: R, h: ⎇}
@@ -22,13 +22,13 @@ layers:
     - {t: ',', s: ;}
     - {t: ., s: '!'}
     - {t: /, s: '?'}
-  - - {t: ESC, h: media}
-    - {t: SPACE, h: nav}
-    - {t: ↹, h: rsym}
-    - {t: RET, h: lsym}
-    - {t: BSPC, h: num}
-    - {t: DEL, h: fun}
-  num:
+  - - {t: ESC, h: Media}
+    - {t: SPACE, h: Navigation}
+    - {t: ↹, h: Symbols RH}
+    - {t: RET, h: Symbols LH}
+    - {t: BSPC, h: Numbers}
+    - {t: DEL, h: Functions}
+  Numbers:
   - [Gui+1, Gui+2, Gui+3, Gui+4, Gui+5, Gui+6, Gui+7, Gui+8, Gui+9, Gui+0]
   - - {t: '1', h: ⌘}
     - {t: '2', h: ⎇}
@@ -56,7 +56,7 @@ layers:
     - ''
     - {type: held}
     - ''
-  rsym:
+  Symbols RH:
   - ['', '', '', '', '', '?', '!', +, '&und DQT', '&und SQT']
   - - ⌘
     - ⎇
@@ -84,7 +84,7 @@ layers:
     - ''
     - ''
     - ''
-  lsym:
+  Symbols LH:
   - - '&und CARET'
     - {t: '[', s: '{'}
     - {t: ']', s: '}'}
@@ -103,7 +103,7 @@ layers:
     - {type: held}
     - ''
     - ''
-  nav:
+  Navigation:
   - [Gui+1, Gui+2, Gui+3, Gui+4, Gui+5, '&msc SCRL_LEFT', '&msc SCRL_DOWN', '&msc SCRL_UP', '&msc SCRL_RIGHT', '']
   - [⌘, ⎇, ⌃, ⇧, '', ←, ↓, ↑, →, ⇪]
   - [Ctl+Z, Ctl+X, Ctl+C, Ctl+V, '', HOME, PG UP, PG DN, END, INS]
@@ -113,7 +113,7 @@ layers:
     - ''
     - ''
     - ''
-  fun:
+  Functions:
   - [F1, F2, F3, F4, '', '', '', '', '', '']
   - [F5, F6, F7, F8, '', '', ⇧, ⌃, ⎇, ⌘]
   - [F9, F10, F11, F12, '', '', '', '', '', '']
@@ -123,7 +123,7 @@ layers:
     - ''
     - ''
     - {type: held}
-  media:
+  Media:
   - ['', '', '', '', '', '', '', '', '', '']
   - [⇧, ⌃, ⎇, ⌘, '', PREV, VOL DN, VOL UP, NEXT, '']
   - - ''
