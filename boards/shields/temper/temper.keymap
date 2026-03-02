@@ -98,13 +98,13 @@
             bindings = <&kp COMMA>, <&kp SEMI>;
             mods = <(MOD_LSFT)>;
         };
-        /* dot_colon: dot_colon { */
-        /*     compatible = "zmk,behavior-hold-tap"; */
-        /*     #binding-cells = <0>; */
-        /*     flavor = "hold-preferred"; */
-        /*     tapping-term-ms = <200>; */
-        /*     bindings = <&kp COLON>, <&kp DOT>; */
-        /* }; */
+        dot: dot {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&dot_excl>, <&kp>;
+        };
         dot_excl: dot_excl {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -150,13 +150,13 @@
 //    ├─────────────┼─────────────┼──────────────┼─────────────┼───────────────┤   ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
 //    │ &hml lgui A │ &hml lalt R │ &hml lctl S  │ &hml lsft T │       G       │   │       M       │ &hmr rsft N │ &hmr rctl E │ &hmr ralt I │ &hmr rgui O │
 //    ├─────────────┼─────────────┼──────────────┼─────────────┼───────────────┤   ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-//    │      Z      │      X      │      C       │      D      │       V       │   │       K       │      H      │ &comma_semi │  &dot_excl  │      /      │
+//    │      Z      │      X      │      C       │      D      │       V       │   │       K       │      H      │ &comma_semi │  &dot 0 .   │      /      │
 //    └─────────────┴─────────────┼──────────────┼─────────────┼───────────────┤   ├───────────────┼─────────────┼─────────────┼─────────────┴─────────────┘
 //                                │ lt MEDIA esc │ lt NAV spc  │ lt rsftYM tab │   │ lt lsftYM ent │ lt NUM bspc │ lt FUN del  │
 //                                └──────────────┴─────────────┴───────────────┘   └───────────────┴─────────────┴─────────────┘
   &kp Q         &kp W         &kp F           &kp P           &kp B              &kp J          &kp L          &kp U          &kp Y         &qt
   &hml LGUI A   &hml LALT R   &hml LCTRL S    &hml LSHFT T    &kp G              &kp M          &hmr RSHFT N   &hmr RCTRL E   &hmr RALT I   &hmr RGUI O
-  &kp Z         &kp X         &kp C           &kp D           &kp V              &kp K          &kp H          &comma_semi    &dot_excl     &kp SLASH
+  &kp Z         &kp X         &kp C           &kp D           &kp V              &kp K          &kp H          &comma_semi    &dot 0 DOT    &kp SLASH
                               &lt MEDIA ESC   &lt NAV SPACE   &lt RSYM TAB       &lt LSYM RET   &lt NUM BSPC   &lt FUN DEL
                         >;
                 };
