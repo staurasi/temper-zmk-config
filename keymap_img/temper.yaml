@@ -20,7 +20,7 @@ layers:
     - K
     - H
     - {t: ',', s: ;}
-    - {t: ., h: ., s: '>'}
+    - {t: ., h: COLON 0, s: '!'}
     - {t: /, s: '?'}
   - - {t: ESC, h: Media}
     - {t: SPACE, h: Navigation}
@@ -145,7 +145,7 @@ layers:
 
       MUTE'
 combos:
-- p: [26, 27]
+- p: [27, 28]
   k: {t: ;, s: ':'}
 - p: [10, 26]
   k: '&engr A'
