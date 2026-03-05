@@ -156,19 +156,19 @@
                 default_layer {
                         display-name = "BASE";
                         bindings = <
-//    ┌─────────────┬─────────────┬──────────────┬─────────────┬───────────────┐   ┌───────────────┬─────────────┬─────────────┬────────────────┬─────────────┐
-//    │      Q      │      W      │      F       │      P      │       B       │   │       J       │      L      │      U      │       Y        │     &qt     │
-//    ├─────────────┼─────────────┼──────────────┼─────────────┼───────────────┤   ├───────────────┼─────────────┼─────────────┼────────────────┼─────────────┤
-//    │ &hml lgui A │ &hml lalt R │ &hml lctl S  │ &hml lsft T │       G       │   │       M       │ &hmr rsft N │ &hmr rctl E │  &hmr lalt I   │ &hmr rgui O │
-//    ├─────────────┼─────────────┼──────────────┼─────────────┼───────────────┤   ├───────────────┼─────────────┼─────────────┼────────────────┼─────────────┤
-//    │      Z      │      X      │      C       │      D      │       V       │   │       K       │      H      │ &comma_semi │ &multi_dot : 0 │      /      │
-//    └─────────────┴─────────────┼──────────────┼─────────────┼───────────────┤   ├───────────────┼─────────────┼─────────────┼────────────────┴─────────────┘
-//                                │ lt MEDIA esc │ lt NAV spc  │ lt rsftYM tab │   │ lt lsftYM ent │ lt NUM bspc │ lt FUN del  │
-//                                └──────────────┴─────────────┴───────────────┘   └───────────────┴─────────────┴─────────────┘
-  &kp Q         &kp W         &kp F           &kp P           &kp B              &kp J          &kp L          &kp U          &kp Y                &qt
-  &hml LGUI A   &hml LALT R   &hml LCTRL S    &hml LSHFT T    &kp G              &kp M          &hmr RSHFT N   &hmr RCTRL E   &hmr LALT I          &hmr RGUI O
-  &kp Z         &kp X         &kp C           &kp D           &kp V              &kp K          &kp H          &comma_semi    &multi_dot COLON 0   &kp SLASH
-                              &lt MEDIA ESC   &lt NAV SPACE   &lt RSYM TAB       &lt LSYM RET   &lt NUM BSPC   &lt FUN DEL
+//    ┌─────────────┬─────────────┬──────────────┬─────────────┬───────────────┐   ┌───────────────┬──────────────┬─────────────┬────────────────┬─────────────┐
+//    │      Q      │      W      │      F       │      P      │       B       │   │       J       │      L       │      U      │       Y        │     &qt     │
+//    ├─────────────┼─────────────┼──────────────┼─────────────┼───────────────┤   ├───────────────┼──────────────┼─────────────┼────────────────┼─────────────┤
+//    │ &hml lgui A │ &hml lalt R │ &hml lctl S  │ &hml lsft T │       G       │   │       M       │ &hmr rsft N  │ &hmr rctl E │  &hmr lalt I   │ &hmr rgui O │
+//    ├─────────────┼─────────────┼──────────────┼─────────────┼───────────────┤   ├───────────────┼──────────────┼─────────────┼────────────────┼─────────────┤
+//    │      Z      │      X      │      C       │      D      │       V       │   │       K       │      H       │ &comma_semi │ &multi_dot : 0 │      /      │
+//    └─────────────┴─────────────┼──────────────┼─────────────┼───────────────┤   ├───────────────┼──────────────┼─────────────┼────────────────┴─────────────┘
+//                                │ lt MEDIA esc │ lt NAV spc  │ lt rsftYM tab │   │ lt lsftYM ent │ ltr NUM bspc │ lt FUN del  │
+//                                └──────────────┴─────────────┴───────────────┘   └───────────────┴──────────────┴─────────────┘
+  &kp Q         &kp W         &kp F           &kp P           &kp B              &kp J          &kp L           &kp U          &kp Y                &qt
+  &hml LGUI A   &hml LALT R   &hml LCTRL S    &hml LSHFT T    &kp G              &kp M          &hmr RSHFT N    &hmr RCTRL E   &hmr LALT I          &hmr RGUI O
+  &kp Z         &kp X         &kp C           &kp D           &kp V              &kp K          &kp H           &comma_semi    &multi_dot COLON 0   &kp SLASH
+                              &lt MEDIA ESC   &lt NAV SPACE   &lt RSYM TAB       &lt LSYM RET   &ltr NUM BSPC   &lt FUN DEL
                         >;
                 };
                 num_layer {
