@@ -102,6 +102,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
+            quick-tap-ms = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp>, <&dot_excl>;
         };
@@ -110,6 +111,16 @@
             #binding-cells = <0>;
             bindings = <&kp DOT>, <&kp EXCL>;
             mods = <(MOD_LSFT)>;
+        };
+        ltr: layer_tap_repeat {
+          compatible = "zmk,behavior-hold-tap";
+          #binding-cells = <2>;
+          flavor = "tap-preferred";
+          tapping-term-ms = <200>;
+          require-prior-idle-ms = <200>;
+          quick-tap-ms = <175>;
+          bindings = <&mo>, <&kp>;
+          display-name = "Layer-Tap-Repeat";
         };
         hml: home_row_mod_left {
             compatible = "zmk,behavior-hold-tap";
@@ -143,44 +154,44 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
-                        display-name = "Colemak-DH";
+                        display-name = "BASE";
                         bindings = <
 //    ┌─────────────┬─────────────┬──────────────┬─────────────┬───────────────┐   ┌───────────────┬─────────────┬─────────────┬────────────────┬─────────────┐
 //    │      Q      │      W      │      F       │      P      │       B       │   │       J       │      L      │      U      │       Y        │     &qt     │
 //    ├─────────────┼─────────────┼──────────────┼─────────────┼───────────────┤   ├───────────────┼─────────────┼─────────────┼────────────────┼─────────────┤
-//    │ &hml lgui A │ &hml lalt R │ &hml lctl S  │ &hml lsft T │       G       │   │       M       │ &hmr rsft N │ &hmr rctl E │  &hmr ralt I   │ &hmr rgui O │
+//    │ &hml lgui A │ &hml lalt R │ &hml lctl S  │ &hml lsft T │       G       │   │       M       │ &hmr rsft N │ &hmr rctl E │  &hmr lalt I   │ &hmr rgui O │
 //    ├─────────────┼─────────────┼──────────────┼─────────────┼───────────────┤   ├───────────────┼─────────────┼─────────────┼────────────────┼─────────────┤
 //    │      Z      │      X      │      C       │      D      │       V       │   │       K       │      H      │ &comma_semi │ &multi_dot : 0 │      /      │
 //    └─────────────┴─────────────┼──────────────┼─────────────┼───────────────┤   ├───────────────┼─────────────┼─────────────┼────────────────┴─────────────┘
 //                                │ lt MEDIA esc │ lt NAV spc  │ lt rsftYM tab │   │ lt lsftYM ent │ lt NUM bspc │ lt FUN del  │
 //                                └──────────────┴─────────────┴───────────────┘   └───────────────┴─────────────┴─────────────┘
   &kp Q         &kp W         &kp F           &kp P           &kp B              &kp J          &kp L          &kp U          &kp Y                &qt
-  &hml LGUI A   &hml LALT R   &hml LCTRL S    &hml LSHFT T    &kp G              &kp M          &hmr RSHFT N   &hmr RCTRL E   &hmr RALT I          &hmr RGUI O
+  &hml LGUI A   &hml LALT R   &hml LCTRL S    &hml LSHFT T    &kp G              &kp M          &hmr RSHFT N   &hmr RCTRL E   &hmr LALT I          &hmr RGUI O
   &kp Z         &kp X         &kp C           &kp D           &kp V              &kp K          &kp H          &comma_semi    &multi_dot COLON 0   &kp SLASH
                               &lt MEDIA ESC   &lt NAV SPACE   &lt RSYM TAB       &lt LSYM RET   &lt NUM BSPC   &lt FUN DEL
                         >;
                 };
                 num_layer {
-                        display-name = "Numbers";
+                        display-name = "NUM";
                         bindings = <
 //    ┌─────────────┬─────────────┬─────────────┬─────────────┬─────────┐   ┌─────────┬─────────────┬─────────────┬─────────────┬─────────────┐
 //    │   rgui(1)   │   rgui(2)   │   rgui(3)   │   rgui(4)   │ rgui(5) │   │ lgui(6) │   lgui(7)   │   lgui(8)   │   lgui(9)   │   lgui(0)   │
 //    ├─────────────┼─────────────┼─────────────┼─────────────┼─────────┤   ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-//    │ &hml lgui 1 │ &hml lalt 2 │ &hml lctl 3 │ &hml lsft 4 │    5    │   │    6    │ &hmr rsft 7 │ &hmr rctl 8 │ &hmr ralt 9 │ &hmr rgui 0 │
+//    │ &hml lgui 1 │ &hml lalt 2 │ &hml lctl 3 │ &hml lsft 4 │    5    │   │    6    │ &hmr rsft 7 │ &hmr rctl 8 │ &hmr lalt 9 │ &hmr rgui 0 │
 //    ├─────────────┼─────────────┼─────────────┼─────────────┼─────────┤   ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┤
 //    │      /      │      *      │      -      │      +      │ ralt(5) │   │ ______  │   ______    │   ______    │   ______    │   ______    │
 //    └─────────────┴─────────────┼─────────────┼─────────────┼─────────┤   ├─────────┼─────────────┼─────────────┼─────────────┴─────────────┘
 //                                │   ______    │   ______    │ ______  │   │ ______  │   ______    │   ______    │
 //                                └─────────────┴─────────────┴─────────┘   └─────────┴─────────────┴─────────────┘
   &kp RG(N1)     &kp RG(N2)     &kp RG(N3)      &kp RG(N4)      &kp RG(N5)       &kp LG(N6)   &kp LG(N7)      &kp LG(N8)      &kp LG(N9)     &kp LG(N0)
-  &hml LGUI N1   &hml LALT N2   &hml LCTRL N3   &hml LSHFT N4   &kp N5           &kp N6       &hmr RSHFT N7   &hmr RCTRL N8   &hmr RALT N9   &hmr RGUI N0
+  &hml LGUI N1   &hml LALT N2   &hml LCTRL N3   &hml LSHFT N4   &kp N5           &kp N6       &hmr RSHFT N7   &hmr RCTRL N8   &hmr LALT N9   &hmr RGUI N0
   &kp SLASH      &kp STAR       &kp MINUS       &kp PLUS        &kp RA(N5)       ______       ______          ______          ______         ______
                                 ______          ______          ______           ______       ______          ______
                         >;
                 };
 
                 rsym_layer {
-                        display-name = "Symbols RH";
+                        display-name = "SYM R";
                         bindings = <
 //    ┌────────┬────────┬────────┬────────┬────────┐   ┌────────┬────────┬────────┬────────┬────────┐
 //    │ ______ │ ______ │ ______ │ ______ │ ______ │   │   ?    │   !    │   +    │ &und " │ &und ' │
@@ -199,26 +210,26 @@
                 };
 
                 lsym_layer {
-                        display-name = "Symbols LH";
+                        display-name = "SYM L";
                         bindings = <
 //    ┌────────┬───┬────────┬────────┬────────┐   ┌────────┬────────┬────────┬────────┬────────┐
 //    │ &und ^ │ [ │   ]    │   $    │   ;    │   │ ______ │ ______ │ ______ │ ______ │ ______ │
 //    ├────────┼───┼────────┼────────┼────────┤   ├────────┼────────┼────────┼────────┼────────┤
-//    │   {    │ ( │   )    │   }    │   %    │   │ ______ │  rsft  │  rctl  │  ralt  │  rgui  │
+//    │   {    │ ( │   )    │   }    │   %    │   │ ______ │  rsft  │  rctl  │  lalt  │  rgui  │
 //    ├────────┼───┼────────┼────────┼────────┤   ├────────┼────────┼────────┼────────┼────────┤
 //    │   #    │ < │   >    │   *    │   @    │   │ ______ │ ______ │ ______ │ ______ │ ______ │
 //    └────────┴───┼────────┼────────┼────────┤   ├────────┼────────┼────────┼────────┴────────┘
 //                 │ ______ │ ______ │ ______ │   │ ______ │ ______ │ ______ │
 //                 └────────┴────────┴────────┘   └────────┴────────┴────────┘
   &und CARET   &kp LBKT   &kp RBKT   &kp DLLR   &kp SEMI        ______   ______      ______      ______     ______
-  &kp LBRC     &kp LPAR   &kp RPAR   &kp RBRC   &kp PRCNT       ______   &kp RSHFT   &kp RCTRL   &kp RALT   &kp RGUI
+  &kp LBRC     &kp LPAR   &kp RPAR   &kp RBRC   &kp PRCNT       ______   &kp RSHFT   &kp RCTRL   &kp LALT   &kp RGUI
   &kp HASH     &kp LT     &kp GT     &kp STAR   &kp AT          ______   ______      ______      ______     ______
                           ______     ______     ______          ______   ______      ______
                         >;
                 };
 
                 nav_layer {
-                        display-name = "Navigation";
+                        display-name = "NAV";
                         bindings = <
 //    ┌─────────┬─────────┬─────────┬─────────┬─────────┐   ┌────────────────┬────────────────┬──────────────┬────────────────┬────────┐
 //    │ rgui(1) │ rgui(2) │ rgui(3) │ rgui(4) │ rgui(5) │   │ &msc SCRL_left │ &msc SCRL_down │ &msc SCRL_up │ &msc SCRL_rght │ ______ │
@@ -237,25 +248,25 @@
                 };
 
                 fun_layer {
-                        display-name = "Functions";
+                        display-name = "FUNC";
                         bindings = <
 //    ┌────┬─────┬────────┬────────┬────────┐   ┌────────┬────────┬────────┬────────┬────────┐
 //    │ f1 │ f2  │   f3   │   f4   │ ______ │   │ ______ │ ______ │ ______ │ ______ │ ______ │
 //    ├────┼─────┼────────┼────────┼────────┤   ├────────┼────────┼────────┼────────┼────────┤
-//    │ f5 │ f6  │   f7   │   f8   │ ______ │   │ ______ │  rsft  │  rctl  │  ralt  │  rgui  │
+//    │ f5 │ f6  │   f7   │   f8   │ ______ │   │ ______ │  rsft  │  rctl  │  lalt  │  rgui  │
 //    ├────┼─────┼────────┼────────┼────────┤   ├────────┼────────┼────────┼────────┼────────┤
 //    │ f9 │ f10 │  f11   │  f12   │ ______ │   │ ______ │ ______ │ ______ │ ______ │ ______ │
 //    └────┴─────┼────────┼────────┼────────┤   ├────────┼────────┼────────┼────────┴────────┘
 //               │ ______ │ ______ │ ______ │   │ ______ │ ______ │ ______ │
 //               └────────┴────────┴────────┘   └────────┴────────┴────────┘
   &kp F1   &kp F2    &kp F3    &kp F4    ______       ______   ______      ______      ______     ______
-  &kp F5   &kp F6    &kp F7    &kp F8    ______       ______   &kp RSHFT   &kp RCTRL   &kp RALT   &kp RGUI
+  &kp F5   &kp F6    &kp F7    &kp F8    ______       ______   &kp RSHFT   &kp RCTRL   &kp LALT   &kp RGUI
   &kp F9   &kp F10   &kp F11   &kp F12   ______       ______   ______      ______      ______     ______
                      ______    ______    ______       ______   ______      ______
                         >;
                 };
                 media_layer {
-                        display-name = "Media";
+                        display-name = "MEDIA";
                         bindings = <
 //    ┌────────┬────────┬────────┬────────┬────────┐   ┌──────────┬──────────┬──────────┬──────────┬──────────┐
 //    │ ______ │ ______ │ ______ │ ______ │ ______ │   │  ______  │  ______  │  ______  │  ______  │  ______  │
