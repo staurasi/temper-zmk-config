@@ -20,7 +20,7 @@ layers:
     - K
     - H
     - {t: ',', s: ;}
-    - {t: ., h: COLON 0, s: '!'}
+    - {t: ., h: ':', s: '!'}
     - {t: /, s: '?'}
   - - {t: ESC, h: Media}
     - {t: SPACE, h: Navigation}
