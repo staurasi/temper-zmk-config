@@ -76,6 +76,16 @@
                 , <&macro_tap &kp SPACE>
                 ;
         };
+        btsnc: bluetooth_sel_and_clr {
+            compatible = "zmk,behavior-macro-one-param";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <1>;
+            bindings
+                = <&macro_tap &macro_param_1to1 &bt BT_SEL MACRO_PLACEHOLDER>
+                , <&macro_tap &bt BT_CLR>
+                ;
+        };
         onecol: onecol {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -106,6 +116,12 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp COMMA>, <&kp SEMI>;
+            mods = <(MOD_LSFT)>;
+        };
+        btsc: bluetooth_sel_or_clr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <2>;
+            bindings = <&bt BT_SEL>, <&btsnc>;
             mods = <(MOD_LSFT)>;
         };
         multi_dot: multi_dot {
@@ -278,19 +294,19 @@
                 media_layer {
                         display-name = "MEDIA";
                         bindings = <
-//    ┌────────┬────────┬────────┬────────┬────────┐   ┌──────────┬──────────┬──────────┬──────────┬──────────┐
-//    │ ______ │ ______ │ ______ │ ______ │ ______ │   │  ______  │  ______  │  ______  │  ______  │  ______  │
-//    ├────────┼────────┼────────┼────────┼────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-//    │  lsft  │  lctl  │  lalt  │  lgui  │ ______ │   │   prev   │   vold   │   volu   │   next   │  ______  │
-//    ├────────┼────────┼────────┼────────┼────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-//    │ ______ │ ______ │ ______ │ ______ │ ______ │   │ bt_sel 0 │ bt_sel 1 │ bt_sel 2 │ bt_sel 3 │ bt_sel 4 │
-//    └────────┴────────┼────────┼────────┼────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┘
-//                      │ ______ │ ______ │ ______ │   │  K_STOP  │   play   │   mute   │
-//                      └────────┴────────┴────────┘   └──────────┴──────────┴──────────┘
-  ______      ______      ______     ______     ______       ______         ______         ______         ______         ______
-  &kp LSHFT   &kp LCTRL   &kp LALT   &kp LGUI   ______       &kp C_PREV     &kp C_VOL_DN   &kp C_VOL_UP   &kp C_NEXT     ______
-  ______      ______      ______     ______     ______       &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4
-                          ______     ______     ______       &kp K_STOP     &kp C_PP       &kp C_MUTE
+//    ┌────────┬────────┬────────┬────────┬────────┐   ┌──────────┬───────────┬───────────┬───────────┬───────────┐
+//    │ ______ │ ______ │ ______ │ ______ │ ______ │   │ bt_sel 4 │ &btsc 0 0 │ &btsc 1 1 │ &btsc 2 2 │ &btsc 3 3 │
+//    ├────────┼────────┼────────┼────────┼────────┤   ├──────────┼───────────┼───────────┼───────────┼───────────┤
+//    │  lgui  │  lalt  │  lctl  │  lsft  │ ______ │   │  bt_clr  │ bt_sel 0  │ bt_sel 1  │ bt_sel 2  │ bt_sel 3  │
+//    ├────────┼────────┼────────┼────────┼────────┤   ├──────────┼───────────┼───────────┼───────────┼───────────┤
+//    │ ______ │ ______ │ ______ │ ______ │ ______ │   │   prev   │   vold    │   volu    │   next    │  ______   │
+//    └────────┴────────┼────────┼────────┼────────┤   ├──────────┼───────────┼───────────┼───────────┴───────────┘
+//                      │ ______ │ ______ │ ______ │   │  K_STOP  │   play    │   mute    │
+//                      └────────┴────────┴────────┘   └──────────┴───────────┴───────────┘
+  ______     ______     ______      ______      ______       &bt BT_SEL 4   &btsc 0 0      &btsc 1 1      &btsc 2 2      &btsc 3 3
+  &kp LGUI   &kp LALT   &kp LCTRL   &kp LSHFT   ______       &bt BT_CLR     &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3
+  ______     ______     ______      ______      ______       &kp C_PREV     &kp C_VOL_DN   &kp C_VOL_UP   &kp C_NEXT     ______
+                        ______      ______      ______       &kp K_STOP     &kp C_PP       &kp C_MUTE
                         >;
                 };
         };
