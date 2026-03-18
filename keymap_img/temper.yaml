@@ -133,27 +133,18 @@ layers:
     - ''
     - {type: held}
   MEDIA:
+  - ['', '', '', '', '', '', '', '', '', '']
+  - [⌘, ⎇, ⌃, ⇧, '', PREV, VOL DN, VOL UP, NEXT, '']
   - - ''
     - ''
     - ''
     - ''
-    - ''
-    - {t: BT, h: '4'}
-    - {t: BT, h: '0', s: '&btsnc'}
-    - {t: BT, h: '1', s: '&btsnc 1'}
-    - {t: BT, h: '2', s: '&btsnc 2'}
-    - {t: BT, h: '3', s: '&btsnc 3'}
-  - - ⌘
-    - ⎇
-    - ⌃
-    - ⇧
     - ''
     - BT CLR
     - {t: BT, h: '0'}
     - {t: BT, h: '1'}
     - {t: BT, h: '2'}
     - {t: BT, h: '3'}
-  - ['', '', '', '', '', PREV, VOL DN, VOL UP, NEXT, '']
   - - {type: held}
     - ''
     - ''
