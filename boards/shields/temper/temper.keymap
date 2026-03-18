@@ -76,16 +76,6 @@
                 , <&macro_tap &kp SPACE>
                 ;
         };
-        btsnc: bluetooth_sel_and_clr {
-            compatible = "zmk,behavior-macro-one-param";
-            wait-ms = <0>;
-            tap-ms = <0>;
-            #binding-cells = <1>;
-            bindings
-                = <&macro_tap &macro_param_1to1 &bt BT_SEL MACRO_PLACEHOLDER>
-                , <&macro_tap &bt BT_CLR>
-                ;
-        };
         onecol: onecol {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -116,30 +106,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp COMMA>, <&kp SEMI>;
-            mods = <(MOD_LSFT)>;
-        };
-        bt0: bt0 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&bt BT_SEL 0>, <&btsnc 0>;
-            mods = <(MOD_LSFT)>;
-        };
-        bt1: bt1 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&bt BT_SEL 1>, <&btsnc 1>;
-            mods = <(MOD_LSFT)>;
-        };
-        bt2: bt2 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&bt BT_SEL 2>, <&btsnc 2>;
-            mods = <(MOD_LSFT)>;
-        };
-        bt3: bt3 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&bt BT_SEL 3>, <&btsnc 3>;
             mods = <(MOD_LSFT)>;
         };
         multi_dot: multi_dot {
@@ -321,9 +287,9 @@
 //    └────────┴────────┼────────┼────────┼────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┘
 //                      │ ______ │ ______ │ ______ │   │  K_STOP  │   play   │   mute   │
 //                      └────────┴────────┴────────┘   └──────────┴──────────┴──────────┘
-  ______     ______     ______      ______      ______       &bt BT_SEL 4   &bt0           &bt1           &bt2           &bt3
-  &kp LGUI   &kp LALT   &kp LCTRL   &kp LSHFT   ______       &bt BT_CLR     &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3
-  ______     ______     ______      ______      ______       &kp C_PREV     &kp C_VOL_DN   &kp C_VOL_UP   &kp C_NEXT     ______
+  ______     ______     ______      ______      ______       ______     ______     ______      ______      ______
+  &kp LGUI   &kp LALT   &kp LCTRL   &kp LSHFT   ______       &kp C_PREV     &kp C_VOL_DN   &kp C_VOL_UP   &kp C_NEXT     ______
+  ______     ______     ______      ______      ______       &bt BT_CLR     &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3
                         ______      ______      ______       &kp K_STOP     &kp C_PP       &kp C_MUTE
                         >;
                 };
