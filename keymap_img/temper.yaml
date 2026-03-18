@@ -29,7 +29,16 @@ layers:
     - {t: BSPC, h: NUM}
     - {t: DEL, h: FUNC}
   NUM:
-  - [Gui+1, Gui+2, Gui+3, Gui+4, Gui+5, Gui+6, Gui+7, Gui+8, Gui+9, Gui+0]
+  - - {t: /, s: '?'}
+    - '*'
+    - {t: '-', s: _}
+    - +
+    - AltGr+5
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
   - - {t: '1', h: ⌘}
     - {t: '2', h: ⎇}
     - {t: '3', h: ⌃}
@@ -40,13 +49,13 @@ layers:
     - {t: '8', h: ⌃}
     - {t: '9', h: ⎇}
     - {t: '0', h: ⌘}
-  - - {t: /, s: '?'}
-    - '*'
-    - {t: '-', s: _}
-    - +
-    - AltGr+5
+  - - ''
     - ''
     - ''
+    - '5'
+    - ''
+    - ''
+    - '6'
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
